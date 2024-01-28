@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Young+Serif&display=swap');
+
+:root {
+    --Nutmeg: hsl(14, 45%, 36%);
+    --Dark_Raspberry: hsl(332, 51%, 32%);
+    --light_purple: #fff7fc;
+    --White: hsl(0, 0%, 100%);
+    --Rose_White: hsl(330, 100%, 98%);
+    --Eggshell: hsl(30, 54%, 90%) ;
+    --Light_Grey: hsl(30, 18%, 87%);
+    --Wenge_Brown: hsl(30, 10%, 34%);
+    --Dark_Charcoal: hsl(24, 5%, 18%);
+    --font-family-1: 'Outfit', sans-serif;
+    --font-family-2: 'Young Serif', serif;
+    --fw-regular: 400;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+}
+
+// https://piccalil.li/blog/a-modern-css-reset
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* added */
+html, 
+body {
+    height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  /* min-height: 100vh; */ /* removed */
+  text-rendering: optimizeSpeed;
+  line-height: 1.5; 
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture, 
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+/* input,
+button,
+textarea,
+select {
+  font: inherit;
+} */
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ------------------------------------ */
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* globals */
+.description,
+h3,
+li,
+.nutrition-para {
+    font-family: var(--font-family-1);
+    font-family: var(--font-family-1);
+}
+
+.recipe-header,
+h2 {
+    font-family: var(--font-family-2);
+}
+
+h2 {
+    color: var(--Nutmeg);
+    font-weight: var(--fw-bold);
+    font-size: 1.8rem;
+    padding-bottom: 1.2rem;
+}
+
+.description,
+.prep-list,
+.ingredients-list, 
+.instructions-list,
+.nutrition-para,
+.nutrition-properties {
+    opacity: 60%;
+}
+
+.prep-time,
+.ingredients,
+.instructions,
+.nutrition {
+    margin: 2rem;
+}
+
+.prep-list,
+.ingredients-list,
+.instructions-list {
+    margin-left: 1.4rem;
+}
+
+.prep-list li,
+.ingredients-list li,
+.instructions-list li {
+    padding: 5px 0;
+    padding-left: 16px;
+}
+
+/* image */
+.omelette-image {
+    margin-bottom: 10px;
+}
+
+/* header */
+.recipe-header {
+    font-size: 2rem;
+    padding: 1.5rem 2rem;
+}
+
+/* description below header */
+.description {
+    padding: 0 2rem;
+}
+
+/* Prep time section */
+.prep-time {
+    background-color: var(--light_purple);
+    padding: 1.4rem;
+    border-radius: 12px;
+}
+
+h3 {
+    color: var(--Dark_Raspberry);
+    font-weight: var(--fw-semibold);
+    padding-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.prep-list {
+    font-size: 18px; 
+}
+
+span {
+    font-weight: var(--fw-bold);
+}
+
+/* add grey line below sections */
+.ingredients,
+.instructions {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(211, 211, 211, 0.801);
+}
+
+.nutrition-table {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    margin: 1.2rem 0;
+}
+
+.nutrition-table div {
+    font-family: var(--font-family-1);
+    font-size: 1.2rem;
+    padding: 0.8rem 2rem;
+    border-bottom: 1px solid rgba(211, 211, 211, 0.801);
+}
+
+.nutrition-values {
+    color: var(--Nutmeg);
+}
+
+.nutrition-table div:nth-last-child(-n+2) {
+    border-bottom: none;
+}
+
+@media screen and (min-width: 376px) {
+    .omelette-image {
+        width: 100%;
+        padding: 20px;
+    }
+}
